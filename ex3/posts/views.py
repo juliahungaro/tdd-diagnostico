@@ -6,6 +6,7 @@ def mostrar_formulario(request):
         post = Post()
         post.titulo = request.POST.get('titulo')
         post.conteudo = request.POST.get('conteudo')
+        post.nome = request.POST.get('nome')
 
         post.save()
 
@@ -17,3 +18,7 @@ def mostrar_home(request):
     posts = Post.objects.all()
 
     return render(request, 'index.html', {'posts': posts})
+
+def mostrar_autor(request):
+    
+    return render(request, 'index.html')
